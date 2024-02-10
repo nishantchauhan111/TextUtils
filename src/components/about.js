@@ -8,25 +8,27 @@ export default function About() {
   var [btnText, setBtnText] = useState("Change the view to the dark mode")
 
   const changeDarkTheme = ()=>{
-          if(mystyle.color == "black"){
-            setmystyle({
-              color: "white",
-              backgroundColor: "black"
-            });
-            setBtnText('Change the view to light mode')
-          }
-          else{
-            setmystyle({
-              color: "black",
-              backgroundColor: "white"
-            });
-            setBtnText('Change the view to the dark mode')
-          }
-        }
+      if(mystyle.color === "black"){
+        setmystyle({
+          color: "white",
+          backgroundColor: "black",
+          border: '1px solid white'
+        });
+        setBtnText('Change the view to light mode')
+      }
+      else{
+        setmystyle({
+          color: "black",
+          backgroundColor: "white",
+          border: '1px solid black'
+        });
+        setBtnText('Change the view to the dark mode')
+      }
+    }
   return (
     <div>
     <h1 className="heading">About US</h1>
-    <div className="container" style={mystyle}>
+    <div className="container">
       <div id="accordion">
           <div className="card" style={mystyle}>
               <div className="card-header" id="headingOne">
